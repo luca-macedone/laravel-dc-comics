@@ -1,0 +1,262 @@
+@use './variables' as *;
+
+/*
+utilities
+*/
+.ms-bg-primary {
+    background-color: $ms-primary;
+}
+
+.ms-bg-secondary {
+    background-color: $ms-secondary;
+}
+
+.ms-bg-accent {
+    background-color: $ms-accent;
+}
+
+.ms-bg-dark {
+    background-color: $ms-dark;
+}
+
+.ms-text-primary {
+    color: $ms-primary;
+}
+
+.ms-text-secondary {
+    color: $ms-secondary;
+}
+
+.ms-text-accent {
+    color: $ms-accent;
+}
+
+.ms-text-dark {
+    color: $ms-dark;
+}
+
+.ms-text-xs {
+    font-size: $ms-font-xs;
+}
+
+// .active-page {
+//     border-bottom: 3px solid $ms-accent !important;
+//     color: $ms-accent !important;
+// }
+
+/*
+header
+*/
+header {
+    background-color: $ms-primary;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 50;
+
+    #header_top {
+        a {
+            font-size: $ms-font-sm;
+            color: $ms-primary;
+            text-decoration: none;
+        }
+    }
+
+    .container {
+        .navbar-toggler {
+            border-color: $ms-accent;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        #header-navbar {
+            ul {
+                li {
+                    display: flex;
+                    align-items: center;
+
+                    text-transform: uppercase;
+                    font-size: $ms-font-sm;
+                    
+                    &.active-page a {
+                        color: $ms-accent;
+                    }
+
+                    &:hover a {
+                        color: $ms-accent;
+                    }
+
+                    a {
+                        color: $ms-dark;
+                    }
+                }
+            }
+
+            #search-bar {
+                input,
+                button {
+                    border-color: $ms-accent !important;
+                    border-width: 2px !important;
+                    &:focus {
+                        box-shadow: none;
+                    }
+                    i {
+                        font-size: $ms-font-xl;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #header-navbar {
+        min-height: 80px;
+        li {
+            height: 80px !important;
+            border-bottom: 4px solid $ms-primary;
+
+            &.active {
+
+                border-bottom: 4px solid $ms-accent;
+            }
+        }
+    }
+}
+
+/*
+main
+*/
+main {
+    background-color: $ms-dark;
+    color: $ms-primary;
+}
+
+/*
+jumbotron
+*/
+#jumbotron {
+    height: 40vh;
+    background-image: url('/resources/img/jumbotron.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.comic-link {
+    text-decoration: none;
+    color: $ms-primary;
+
+    .img-container {
+        aspect-ratio: 1/1;
+        overflow-y: hidden;
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    
+    .comic-name {
+        padding: 1rem 0;
+        font-size: $ms-font-sm;
+        text-transform: uppercase;
+    }
+}
+
+.badge {
+    background-color: $ms-accent;
+    text-transform: uppercase;
+    font-size: $ms-font-xl !important;
+    top: -4.5rem;
+    left: 0;
+}
+
+#learn-more-btn {
+    width: 10rem;
+    background-color: $ms-accent;
+    color: $ms-primary;
+    text-transform: uppercase;
+    font-size: $ms-font-sm;
+    cursor: pointer;
+}
+
+.ms-call-to-action {
+    background-color: $ms-accent;
+    margin-top: 1rem;
+    a{
+        text-decoration: none;
+
+        span {
+            text-transform: uppercase;
+            font-size: $ms-font-sm;
+            font-weight: light;
+            display: inline-block;
+            color: $ms-primary;
+        }
+    }
+}
+
+footer {
+    #top {
+        background-color: $ms-dark;
+        background-image: url('/resources/img/footer-bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #bottom {
+        background-color: $ms-dark;
+    }
+}
+
+#footer-top {
+    background-repeat: no-repeat;
+    background-position: right;
+    padding: 3rem 0;
+
+    .col-4 {
+        h4 {
+            text-transform: uppercase;
+            font-size: $ms-font-md;
+            color: $ms-primary;
+        }
+
+        ul {
+            margin-bottom: 1rem;
+
+            li {
+                a {
+                    font-size: $ms-font-xs;
+                    color: $ms-secondary;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        background-image: url('/resources/img/dc-logo-bg.png');
+    }
+}
+
+#footer-bottom {
+    padding: 1.5rem 0;
+    .btn {
+        text-transform: uppercase;
+        font-size: $ms-font-md;
+        border: 2px solid $ms-accent;
+        color: $ms-primary;
+    }
+    .contacts {
+        span {
+            font-size: $ms-font-md;
+            color: $ms-accent;
+            text-transform: uppercase;
+        }
+        img {
+            cursor: pointer;
+        }
+    }
+}
