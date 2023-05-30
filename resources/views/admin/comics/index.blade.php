@@ -13,6 +13,14 @@
                     {{-- <h2 class="badge rounded-0 px-3 py-2 position-absolute">
                     Current Series
                 </h2> --}}
+                    @if (session('message'))
+                    <div class="alert alert-primary alert-dismissible fade show w-100 p-3 border" role="alert">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <strong class="text-uppercase">{{ session('message') }}</strong>
+                    </div>
+                    @endif
+                    
+                    
                     <div class="w-100 d-flex justify-content-between align-items-center pb-3">    
                         <h1>Comics</h1>
                         <a class="btn btn-info fw-bold fs-5 text-uppercase" href="{{ route('admin.comics.create') }}">
@@ -51,13 +59,39 @@
                                                 <a class="btn btn-warning d-lg-inline-flex admin-btn" href="{{route('admin.comics.edit', $comic->id)}}">
                                                     <i class="fa-solid fa-pencil"></i>
                                                 </a>
-                                                <form class="" action="{{ route('admin.comics.destroy', $comic->id) }}" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="btn btn-danger admin-btn" type="submit">
-                                                        <i class="fa-solid fa-trash"></i>
-                                                    </button>
-                                                </form>
+                                                <!-- Modal trigger button -->
+                                                <button type="button" class="btn btn-danger admin-btn" data-bs-toggle="modal" data-bs-target="{{'#modalId' . $comic->id}}">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                                
+                                                <!-- Modal Body -->
+                                                <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                                                <div class="modal fade" id="{{'modalId'.$comic->id}}" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="{{'modalTitleId' . $comic->id}}" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title text-danger" id="{{'modalTitleId' . $comic->id}}">Warning</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body ms-text-dark">
+                                                                Are you sure to delete this item?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                {{-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> --}}
+                                                                <form class="" action="{{ route('admin.comics.destroy', $comic->id) }}" method="post">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button class="btn btn-danger" type="submit">
+                                                                        Permanently delete
+                                                                        <i class="fa-solid fa-trash"></i>
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                                
                                             </div>
                                         </td>
                                     </tr>

@@ -50,7 +50,7 @@ class ComicsController extends Controller
         $new_comic->type = $data['type'];
         $new_comic->save();
 
-        return redirect()->route('admin.comics.index');
+        return redirect()->route('admin.comics.index')->with('message', 'comic added successfully');
     }
 
     /**
@@ -95,7 +95,7 @@ class ComicsController extends Controller
             'type' => $request->type,
         ];
         $comic->update($data);
-        return to_route('admin.comics.index')->with('message', 'comic updated');
+        return to_route('admin.comics.index')->with('message', 'comic updated successfully');
     }
 
     /**
@@ -107,6 +107,6 @@ class ComicsController extends Controller
     public function destroy(Comic $comic)
     {
         $comic->delete();
-        return to_route('admin.comics.index')->with('message', 'comic deleted');
+        return to_route('admin.comics.index')->with('message', 'comic deleted successfully');
     }
 }
