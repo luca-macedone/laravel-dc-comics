@@ -221,6 +221,20 @@ jumbotron
     cursor: pointer;
 }
 
+.admin-btn {
+    width: 50px;
+    height: 50px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem !important;
+    i {
+        display: inline-flex;
+        padding: 0;
+        margin: 0;
+    }
+}
+
 #learn-more-btn {
     width: 10rem;
     background-color: $ms-accent;

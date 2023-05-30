@@ -45,16 +45,16 @@
                                         <td class="text-capitalize">{{ $comic['type'] }}</td>
                                         <td class="">
                                             <div class="d-flex justify-content-center align-items-center gap-3">
-                                                <a class="btn btn-info d-lg-inline-flex" href="{{route('admin.comics.show', $comic->id)}}">
+                                                <a class="btn btn-info d-lg-inline-flex admin-btn" href="{{route('admin.comics.show', $comic->id)}}">
                                                     <i class="fa-solid fa-eye"></i>
                                                 </a>
-                                                <a class="btn btn-warning d-lg-inline-flex" href="{{route('admin.comics.edit', $comic->id)}}">
+                                                <a class="btn btn-warning d-lg-inline-flex admin-btn" href="{{route('admin.comics.edit', $comic->id)}}">
                                                     <i class="fa-solid fa-pencil"></i>
                                                 </a>
                                                 <form class="" action="{{ route('admin.comics.destroy', $comic->id) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button class="btn btn-danger" type="submit">
+                                                    <button class="btn btn-danger admin-btn" type="submit">
                                                         <i class="fa-solid fa-trash"></i>
                                                     </button>
                                                 </form>

@@ -84,6 +84,7 @@ class ComicsController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+       //dd($request);
         $data = [
             'title' => $request->title,
             'thumb' => $request->thumb,

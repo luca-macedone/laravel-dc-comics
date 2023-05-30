@@ -9,7 +9,7 @@
 <div class="bg-white">
     <div class="comic-thumb ms-bg-accent">
         <div class="container">
-            <img src="{{ Vite::asset($comic['title']) }}" width="220" alt=""/>
+            <img src="{{ $comic['thumb'] }}" width="220" alt=""/>
         </div>
     </div>
     <div class="container">
@@ -69,7 +69,7 @@
                 </div>
                 <div class="row border-bottom py-2">
                     <div class="col-3 ms-text-dark">On sale date:</div>
-                    <div class="col-9 text-dark">{{ $comic['sale_date'] }}</div>
+                    <div class="col-9 text-dark">{{ date('M j o', strtotime($comic['sale_date'])) }}</div>
                 </div>
             </div>
         </div>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guests\PageController;
 
 use App\Http\Controllers\ComicsController;
+use App\Models\Comic;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,12 @@ use App\Http\Controllers\ComicsController;
 
 Route::get('home', [PageController::class, 'index'])->name('home');
 
-Route::get('comic_details', [PageController::class, 'details'])->name('comic_details');
-
 Route::get('comics', [PageController::class, 'comics'])->name('comics');
+
 Route::resource('/admin/comics', ComicsController::class, ['as' => 'admin']);
+
+Route::get('comic_details/{id}', function(string $id){
+    $comic = Comic::find($id);
+    // dd($comic);
+    return view('comic_details', compact('comic'));
+})->name('comic_details');
