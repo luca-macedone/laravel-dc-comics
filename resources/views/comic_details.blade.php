@@ -48,12 +48,12 @@
             <div class="col-12 col-lg-6">
                 <h3 class="ms-text-dark">Talent</h3>
                 <div class="row border-top border-bottom py-2">
-                    <div class="col-3 ms-text-dark">Lorem, ipsum.</div>
-                    <div class="col-9 text-info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat ducimus eveniet nemo labore harum eligendi dicta reprehenderit velit fugiat. Molestiae natus, unde iste iusto blanditiis recusandae praesentium voluptatibus quidem cum.</div>
+                    <div class="col-3 ms-text-dark">Art by:</div>
+                    <div class="col-9 ms-text-accent">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat ducimus eveniet nemo labore harum eligendi dicta reprehenderit velit fugiat. Molestiae natus, unde iste iusto blanditiis recusandae praesentium voluptatibus quidem cum.</div>
                 </div>
                 <div class="row border-bottom py-2">
-                    <div class="col-3 ms-text-dark">Lorem, ipsum.</div>
-                    <div class="col-9 text-info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat ducimus eveniet nemo labore harum eligendi dicta reprehenderit velit fugiat. </div>
+                    <div class="col-3 ms-text-dark">Written by:</div>
+                    <div class="col-9 ms-text-accent">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat ducimus eveniet nemo labore harum eligendi dicta reprehenderit velit fugiat. </div>
                 </div>
             </div>
             <div class="col-12 col-lg-6">
@@ -61,7 +61,7 @@
                 <div class="row border-top border-bottom py-2">
                     <div class="col-3 ms-text-dark">Series:</div>
                     {{-- <div class="col-9 text-info">ACTION GAMES</div> --}}
-                    <div class="col-9 text-info">{{ $comic['series'] }}</div>
+                    <div class="col-9 ms-text-accent">{{ $comic['series'] }}</div>
                 </div>
                 <div class="row border-bottom py-2">
                     <div class="col-3 ms-text-dark">U.S. Price:</div>
