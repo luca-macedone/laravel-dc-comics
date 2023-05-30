@@ -18,5 +18,7 @@ use App\Http\Controllers\ComicsController;
 
 Route::get('home', [PageController::class, 'index'])->name('home');
 
+Route::get('comic_details', [PageController::class, 'details'])->name('comic_details');
+
 Route::get('comics', [PageController::class, 'comics'])->name('comics');
-Route::resource('/admin/comics', ComicsController::class);
+Route::resource('/admin/comics', ComicsController::class, ['as' => 'admin']);

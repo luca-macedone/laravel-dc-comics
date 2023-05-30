@@ -10,7 +10,7 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col">
-                    <form action="{{ route('comics.store') }}" method="POST">
+                    <form action="{{ route('admin.comics.store') }}" method="POST">
                     @csrf
                         <div class="row">
                             <div class="col-12">

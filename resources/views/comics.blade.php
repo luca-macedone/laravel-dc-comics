@@ -16,7 +16,7 @@
                 <div class="row g-4">
                     @foreach($comics as $comic)
                     <div class="col-12 col-md-4 col-lg-2">
-                        <a href="#" class="comic-link">
+                        <a href="{{ route('comic_details') }}" class="comic-link">
                             <div class="img-container">
                                 <img class="img-fluid" src="{{$comic['thumb']}}" alt="series">
                             </div>

@@ -11,6 +11,18 @@ utilities
     background-color: $ms-secondary;
 }
 
+.ms-bg-tertiary {
+    background-color: $ms-tertiary;
+}
+
+.ms-bg-success {
+    background-color: $ms-success;
+}
+
+.ms-bg-success-light {
+    background-color: $ms-success-light;
+}
+
 .ms-bg-accent {
     background-color: $ms-accent;
 }
@@ -25,6 +37,18 @@ utilities
 
 .ms-text-secondary {
     color: $ms-secondary;
+}
+
+.ms-text-tertiary {
+    color: $ms-tertiary;
+}
+
+.ms-text-success {
+    color: $ms-success;
+}
+
+.ms-text-success-light {
+    color: $ms-success-light;
 }
 
 .ms-text-accent {
@@ -165,12 +189,36 @@ jumbotron
     }
 }
 
+.comic-thumb {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+    img {
+        position: absolute;
+        bottom: 1.2rem;
+    }
+}
+
+.price-banner {
+    div {
+        border-color: $ms-secondary !important;
+    }
+}
+
+.actions-image {
+    filter: invert(40%);
+}
+
 .badge {
     background-color: $ms-accent;
     text-transform: uppercase;
     font-size: $ms-font-xl !important;
     top: -4.5rem;
     left: 0;
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 #learn-more-btn {

@@ -19,4 +19,11 @@ class PageController extends Controller
         // dd($comics);
         return view('comics', compact('comics'));
     }
+
+    public function details(){
+        // $comic = Comic::find($comicId);
+        // dd($comic);
+        // dd($value);
+        return view('comic_details');
+    }
 }

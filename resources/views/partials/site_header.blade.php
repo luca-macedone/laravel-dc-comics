@@ -7,7 +7,7 @@
                         <i class="fa-regular fa-registered" aria-hidden="true"></i>
                     </a>
                 </li>
-                <li>
+                <li class="pointer">
                     <a class="text-uppercase">additional dc sites
                         <i class="fa fa-angle-down" aria-hidden="true"></i>
                     </a>

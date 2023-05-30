@@ -17,7 +17,7 @@ class ComicsController extends Controller
     {
         $comics = Comic::orderByDesc('id')->get();
 
-        return view('admin.index', compact('comics'));
+        return view('admin.comics.index', compact('comics'));
     }
 
     /**
@@ -27,7 +27,7 @@ class ComicsController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        return view('admin.comics.create');
     }
 
     /**
@@ -50,7 +50,7 @@ class ComicsController extends Controller
         $new_comic->type = $data['type'];
         $new_comic->save();
 
-        return redirect()->route('comics.index');
+        return redirect()->route('admin.comics.index');
     }
 
     /**
@@ -61,7 +61,7 @@ class ComicsController extends Controller
      */
     public function show(Comic $comic)
     {
-        return view('admin.comic', compact('comic'));
+        return view('admin.comics.comic', compact('comic'));
     }
 
     /**
@@ -70,9 +70,9 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        return view('admin.comics.edit', compact('comic'));
     }
 
     /**
@@ -82,9 +82,19 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $data = [
+            'title' => $request->title,
+            'thumb' => $request->thumb,
+            'description' => $request->description,
+            'price' => '$'.$request->price,
+            'series' => $request->series,
+            'sale_date' => $request->sale_date,
+            'type' => $request->type,
+        ];
+        $comic->update($data);
+        return to_route('admin.comics.index')->with('message', 'comic updated');
     }
 
     /**
@@ -93,8 +103,9 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return to_route('admin.comics.index')->with('message', 'comic deleted');
     }
 }

@@ -15,7 +15,7 @@
                 </h2> --}}
                     <div class="w-100 d-flex justify-content-between align-items-center pb-3">    
                         <h1>Comics</h1>
-                        <a class="btn btn-info fw-bold fs-5 text-uppercase" href="{{ route('comics.create') }}">
+                        <a class="btn btn-info fw-bold fs-5 text-uppercase" href="{{ route('admin.comics.create') }}">
                             Add
                         </a>
                     </div>
@@ -45,12 +45,19 @@
                                         <td class="text-capitalize">{{ $comic['type'] }}</td>
                                         <td class="">
                                             <div class="d-flex justify-content-center align-items-center gap-3">
-                                                <a class="btn btn-info d-lg-inline-flex" href="{{route('comics.show', $comic->id)}}">
+                                                <a class="btn btn-info d-lg-inline-flex" href="{{route('admin.comics.show', $comic->id)}}">
                                                     <i class="fa-solid fa-eye"></i>
                                                 </a>
-                                                <a class="btn btn-warning d-lg-inline-flex" href="{{route('comics.show', $comic->id)}}">
+                                                <a class="btn btn-warning d-lg-inline-flex" href="{{route('admin.comics.edit', $comic->id)}}">
                                                     <i class="fa-solid fa-pencil"></i>
                                                 </a>
+                                                <form class="" action="{{ route('admin.comics.destroy', $comic->id) }}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger" type="submit">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </button>
+                                                </form>
                                             </div>
                                         </td>
                                     </tr>
